@@ -24,6 +24,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.jetmovie.navigations.MovieNavigation
 import com.example.jetmovie.ui.theme.JetMovieTheme
 
 class MainActivity : ComponentActivity() {
@@ -37,7 +38,7 @@ class MainActivity : ComponentActivity() {
         )
         setContent {
             MyApp {
-                MainContent(movieList = list)
+                MovieNavigation()
             }
 
         }
@@ -47,66 +48,11 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MyApp(content : @Composable () -> Unit){
     JetMovieTheme {
-       Scaffold(
-           topBar = {
-               TopAppBar(backgroundColor = Color.Magenta, elevation = 10.dp) {
-                   Text(
-                       modifier = Modifier.padding(10.dp),
-                       text = " Movie List ->",
-                       fontWeight = FontWeight.Bold,
-                       textAlign = TextAlign.Center,
-                       fontFamily = FontFamily.Monospace
-                   )
-               }
-           }
-       ) {
-           content()
-           
-       }
+ content()
     }
 }
 
-@Composable
-fun MainContent(movieList : List<String>){
-Column(modifier = Modifier.padding(12.dp)) {
-    LazyColumn {
-        items(items=movieList){items->
-           MovieRow(title = items , LocalContext.current )
-        }
-    }
-    
-}
-}
 
-@Composable
-fun MovieRow(title : String, context: Context){
-    Card(modifier = Modifier
-        .padding(4.dp)
-        .fillMaxWidth()
-        .height(100.dp)
-        .clickable {
-            Toast
-                .makeText(context, "u cliked on $title", Toast.LENGTH_SHORT)
-                .show()
-        }
-        ,
-        shape = RoundedCornerShape(16.dp),
-        elevation = 6.dp
-
-    ) {
-
-        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Start) {
-            Surface(modifier = Modifier
-                .padding(10.dp)
-                .size(80.dp), shape = RectangleShape, elevation = 4.dp) {
-                Icon(imageVector = Icons.Default.AccountBox, contentDescription = "movie image placeHolder")
-            }
-            Text(text = title , fontWeight =  FontWeight.SemiBold,)
-        }
-
-    }
-    
-}
 
 @Preview(showBackground = true)
 @Composable
@@ -114,7 +60,7 @@ fun DefaultPreview() {
     MyApp {
         val list = listOf<String>("Bleach","Naruto","Berserk", "Dororo", "GoldenTime")
         MyApp {
-            MainContent(movieList = list)
+        MovieNavigation()
         }
 
     }
