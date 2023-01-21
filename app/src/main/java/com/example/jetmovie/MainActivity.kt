@@ -51,7 +51,34 @@ fun MyApp(content : @Composable () -> Unit){
  content()
     }
 }
+@Composable
+fun MovieRow(title : String,context: Context,onitemClick : (String) -> Unit ={}){
+    Card(modifier = Modifier
+        .padding(4.dp)
+        .fillMaxWidth()
+        .height(100.dp)
+        .clickable {
+//            Toast.makeText(context , " u clicked on $title" , Toast.LENGTH_SHORT).show()
+            onitemClick(title)
+        }
+        ,
+        shape = RoundedCornerShape(16.dp),
+        elevation = 6.dp
 
+    ) {
+
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Start) {
+            Surface(modifier = Modifier
+                .padding(10.dp)
+                .size(80.dp), shape = RectangleShape, elevation = 4.dp) {
+                Icon(imageVector = Icons.Default.AccountBox, contentDescription = "movie image placeHolder")
+            }
+            Text(text = title , fontWeight =  FontWeight.SemiBold,)
+        }
+
+    }
+
+}
 
 
 @Preview(showBackground = true)

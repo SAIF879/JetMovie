@@ -21,6 +21,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.jetmovie.MovieRow
+import com.example.jetmovie.navigations.MovieScreens
+
 
 @Composable
 fun HomeScreen(navController: NavController){
@@ -44,7 +47,7 @@ fun HomeScreen(navController: NavController){
             }
         }
     ) {
-        MainContent(list,navController)
+        MainContent(list,navController = navController)
 
     }
 
@@ -54,39 +57,12 @@ fun MainContent(movieList : List<String>, navController: NavController){
     Column(modifier = Modifier.padding(12.dp)) {
         LazyColumn {
             items(items=movieList){items->
-                MovieRow(title = items , LocalContext.current )
+                MovieRow(title = items, LocalContext.current){title ->
+                    navController.navigate(route = MovieScreens.DetailsScreen.name+"/$title")
+                }
             }
         }
 
     }
 }
 
-@Composable
-fun MovieRow(title : String, context: Context){
-    Card(modifier = Modifier
-        .padding(4.dp)
-        .fillMaxWidth()
-        .height(100.dp)
-        .clickable {
-            Toast
-                .makeText(context, "u cliked on $title", Toast.LENGTH_SHORT)
-                .show()
-        }
-        ,
-        shape = RoundedCornerShape(16.dp),
-        elevation = 6.dp
-
-    ) {
-
-        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Start) {
-            Surface(modifier = Modifier
-                .padding(10.dp)
-                .size(80.dp), shape = RectangleShape, elevation = 4.dp) {
-                Icon(imageVector = Icons.Default.AccountBox, contentDescription = "movie image placeHolder")
-            }
-            Text(text = title , fontWeight =  FontWeight.SemiBold,)
-        }
-
-    }
-
-}
