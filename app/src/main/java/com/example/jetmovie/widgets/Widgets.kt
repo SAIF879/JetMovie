@@ -23,6 +23,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
@@ -68,13 +69,14 @@ fun MovieRow(movie : Movies, context: Context, onitemClick : (String) -> Unit ={
 
             }
           Column(modifier = Modifier.padding(4.dp)) {
+              Spacer(modifier = Modifier.size(10.dp))
               Text(text = movie.title , fontWeight =  FontWeight.Bold, style = MaterialTheme.typography.caption)
               Text(text = "Genre : ${movie.gene}"  , fontWeight = FontWeight.SemiBold , style = MaterialTheme.typography.caption)
               Text(text ="Released : ${movie.year}" , fontWeight = FontWeight.SemiBold , style = MaterialTheme.typography.caption)
               
               // expandable details 
               AnimatedVisibility(visible = expandable) {
-                  Column() {
+                  Column {
                       Text(buildAnnotatedString {
                           withStyle(
                               style = SpanStyle(
@@ -91,8 +93,11 @@ fun MovieRow(movie : Movies, context: Context, onitemClick : (String) -> Unit ={
                               )
                           ) { append("  ${movie.plot}") }
                       })
-
-
+                      // creates a thin line inBetween
+                      Divider(modifier = Modifier.padding(6.dp))
+                      Text(text ="Director :${movie.director}",  style = MaterialTheme.typography.caption , fontWeight = FontWeight.SemiBold)
+                      Text(text ="Actors : ${movie.actors}",  style = MaterialTheme.typography.caption , fontWeight = FontWeight.SemiBold)
+                      Text(text ="Ratings : ${movie.ratings}", style = MaterialTheme.typography.caption , fontWeight = FontWeight.SemiBold)
                   }
               }
 

@@ -9,7 +9,8 @@ data class Movies(
     val plot : String ,
     val poster : String ,
     val images : List<String>,
-    val ratings : String
+    val ratings : String,
+    val director : String
 
 )
 
@@ -20,7 +21,7 @@ fun getMovies() : List<Movies>{
         "2011",
         "so and so",
         "RPG",
-        "cool",
+        "While it may not be obvious to everyone, there are a number of reasons creating random paragraphs can be useful. A few examples of how some people use this generator are listed in the following paragraphs.",
         "https://source.unsplash.com/random/200x200?sig=1",
         listOf(
             "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
@@ -31,6 +32,7 @@ fun getMovies() : List<Movies>{
         ),
 
         "5 Star",
+        "bob"
     ),
 
         Movies(
@@ -39,7 +41,7 @@ fun getMovies() : List<Movies>{
             "2011",
             "so and so",
             "RPG",
-            "cool",
+            "While it may not be obvious to everyone, there are a number of reasons creating random paragraphs can be useful. A few examples of how some people use this generator are listed in the following paragraphs.",
             "https://source.unsplash.com/random/200x200?sig=1",
             listOf(
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
@@ -49,6 +51,7 @@ fun getMovies() : List<Movies>{
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYxMDg1Nzk1MV5BMl5BanBnXkFtZTcwMDk0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
             ),
             "2.4",
+            "bob"
         ),
 
         Movies(
@@ -57,7 +60,7 @@ fun getMovies() : List<Movies>{
             "2011",
             "so and so",
             "RPG",
-            "cool",
+            "While it may not be obvious to everyone, there are a number of reasons creating random paragraphs can be useful. A few examples of how some people use this generator are listed in the following paragraphs.",
             "https://source.unsplash.com/random/200x200?sig=1",
             listOf(
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
@@ -67,6 +70,7 @@ fun getMovies() : List<Movies>{
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYxMDg1Nzk1MV5BMl5BanBnXkFtZTcwMDk0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg"
             ),
             "4.2",
+            "bob"
         ),
 
         Movies(
@@ -75,7 +79,7 @@ fun getMovies() : List<Movies>{
             "2011",
             "so and so",
             "RPG",
-            "cool",
+            "While it may not be obvious to everyone, there are a number of reasons creating random paragraphs can be useful. A few examples of how some people use this generator are listed in the following paragraphs.",
             "https://source.unsplash.com/random/200x200?sig=1",
             listOf(
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
@@ -85,6 +89,7 @@ fun getMovies() : List<Movies>{
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYxMDg1Nzk1MV5BMl5BanBnXkFtZTcwMDk0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg"
             ),
             "4.2",
+            "bob"
         ),
         Movies(
             "qwertf",
@@ -92,7 +97,7 @@ fun getMovies() : List<Movies>{
             "2011",
             "so and so",
             "RPG",
-            "cool",
+            "While it may not be obvious to everyone, there are a number of reasons creating random paragraphs can be useful. A few examples of how some people use this generator are listed in the following paragraphs.",
             "https://source.unsplash.com/random/200x200?sig=1",
             listOf(
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
@@ -102,6 +107,7 @@ fun getMovies() : List<Movies>{
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYxMDg1Nzk1MV5BMl5BanBnXkFtZTcwMDk0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg"
             ),
             "4.2",
+            "bob"
         ),
         Movies(
             "qwertf",
@@ -109,7 +115,7 @@ fun getMovies() : List<Movies>{
             "2011",
             "so and so",
             "RPG",
-            "cool",
+            "While it may not be obvious to everyone, there are a number of reasons creating random paragraphs can be useful. A few examples of how some people use this generator are listed in the following paragraphs.",
             "https://source.unsplash.com/random/200x200?sig=1",
             listOf(
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
@@ -119,6 +125,7 @@ fun getMovies() : List<Movies>{
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYxMDg1Nzk1MV5BMl5BanBnXkFtZTcwMDk0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg"
             ),
             "4.2",
+            "bob"
         ),
 
     )
